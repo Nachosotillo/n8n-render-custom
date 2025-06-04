@@ -1,5 +1,5 @@
 #####################################################
-# Dockerfile para n8n + nodos de Google Cloud       #
+# Dockerfile para n8n + nodos de Google Cloud     #
 #####################################################
 
 # 1) Base: imagen oficial de n8n v1.95.2
@@ -9,6 +9,5 @@ FROM n8nio/n8n:1.95.2
 #    Si lo deseas, aquí podrías copiar tu .n8n/config/settings.json, etc.
 
 # 3) Mantenemos el comando de arranque estándar
-CMD ["n8n", "start", "--tunnel"]
-
+CMD ["start", "--tunnel"]
 
