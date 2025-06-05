@@ -9,6 +9,6 @@ FROM n8nio/n8n:latest-debian
 #    Para este ejemplo, no necesitamos añadir nada más por ahora.
 
 # 3) Comando de arranque de n8n
-#    El ENTRYPOINT de la imagen base de n8n ya llama a 'n8n',
-#    así que solo necesitamos pasar los argumentos para 'start'.
-CMD ["start"]
+#    El ENTRYPOINT de la imagen base de n8n ya llama al binario n8n,
+#    por lo que debemos pasarle el subcomando 'n8n' y luego 'start'.
+CMD ["n8n", "start"]
