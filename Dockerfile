@@ -1,13 +1,15 @@
-#####################################################
-# Dockerfile para n8n + nodos de Google Cloud     #
-#####################################################
+# Dockerfile para n8n con los nodos de Google Cloud
 
-# 1) Base: imagen oficial de n8n v1.95.2
-FROM n8nio/n8n:1.95.2
+# 1) Base: imagen oficial de n8n.
+#    Usa una versión específica para asegurar estabilidad. (Ej: 1.x.x o 2.x.x)
+#    Las versiones >= 1.94.0 ya incluyen los nodos de Google Cloud.
+FROM n8nio/n8n:2.7.3
 
-# 2) Ya no es necesario instalar nada más (en ≥1.94 ya vienen incluidos los nodos de Google Cloud)
-#    Si lo deseas, aquí podrías copiar tu .n8n/config/settings.json, etc.
+# 2) Configuración de n8n (opcional, pero buena práctica)
+#    Puedes añadir aquí cualquier configuración extra, como settings.json
+#    Para este ejemplo, no necesitamos añadir nada más por ahora.
 
-# 3) Mantenemos el comando de arranque estándar
-CMD ["start", "--tunnel"]
-
+# 3) Comando de arranque de n8n
+#    El ENTRYPOINT de la imagen base de n8n ya llama a 'n8n',
+#    así que solo necesitamos pasar los argumentos para 'start'.
+CMD ["start"]
