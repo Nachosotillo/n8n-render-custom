@@ -1,9 +1,8 @@
 # Dockerfile para n8n con los nodos de Google Cloud
 
 # 1) Base: imagen oficial de n8n.
-#    Usa una versión específica para asegurar estabilidad. (Ej: 1.x.x o 2.x.x)
-#    Las versiones >= 1.94.0 ya incluyen los nodos de Google Cloud.
-FROM n8nio/n8n:2.7.3
+#    Usar la última versión estable basada en Debian.
+FROM n8nio/n8n:latest-debian
 
 # 2) Configuración de n8n (opcional, pero buena práctica)
 #    Puedes añadir aquí cualquier configuración extra, como settings.json
